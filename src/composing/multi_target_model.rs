@@ -46,10 +46,10 @@ impl<L: Default, F, D: Data<Elem = F>> PredictInplace<ArrayBase<D, Ix2>, Array2<
             .flat_map(|model| {
                 let mut targets = Array1::default(arr.nrows());
                 model.predict_inplace(arr, &mut targets);
-                targets.into_raw_vec()
+                targets.into_raw_vec_and_offset().0
             })
             .collect::<Array1<L>>()
-            .into_shape((self.models.len(), arr.len_of(Axis(0))))
+            .into_shape_with_order((self.models.len(), arr.len_of(Axis(0))))
             .unwrap()
             .reversed_axes();
     }
