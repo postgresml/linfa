@@ -28,8 +28,8 @@ features = ["std", "derive"]
 ndarray = { version = "0.16" }
 linfa-linalg = { version = "0.1", default-features = false }
 ndarray-linalg = { version = "0.16", optional = true }
-ndarray-rand = "0.14"
-ndarray-stats = "0.5"
+ndarray-rand = "0.15"
+ndarray-stats = "0.6"
 num-traits = "0.2"
 rand_xoshiro = "0.6"
 thiserror = "1.0"
